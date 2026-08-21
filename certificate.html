@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First PR Certificate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,650;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #F7F7F5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .cert-wrapper {
+      width: 100%;
+      max-width: 720px;
+    }
+
+    .cert {
+      background: #fff;
+      border: 1px solid #E5E5E2;
+      border-radius: 12px;
+      padding: 56px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #2563EB;
+    }
+
+    .cert-badge {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #2563EB;
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+
+    .cert-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .cert-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: #171717;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .cert-sub {
+      font-size: 16px;
+      color: #6B6B6B;
+      margin-bottom: 32px;
+    }
+
+    .cert-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 40px;
+      color: #2563EB;
+      margin-bottom: 6px;
+    }
+
+    .cert-github {
+      font-size: 15px;
+      color: #6B6B6B;
+      margin-bottom: 32px;
+    }
+
+    .cert-divider {
+      width: 60px;
+      height: 1px;
+      background: #E5E5E2;
+      margin: 0 auto 28px;
+    }
+
+    .cert-detail {
+      font-size: 14px;
+      color: #6B6B6B;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .cert-detail strong {
+      color: #171717;
+    }
+
+    .cert-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .cert-share {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      background: #2563EB;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .cert-share:hover {
+      background: #1d4ed8;
+    }
+
+    .cert-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      background: transparent;
+      color: #6B6B6B;
+      border: 1px solid #E5E5E2;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .cert-home:hover {
+      border-color: #2563EB;
+      color: #2563EB;
+      text-decoration: none;
+    }
+
+    .cert-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #171717;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .cert-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    .input-section {
+      margin-bottom: 24px;
+    }
+
+    .input-section label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: #6B6B6B;
+      margin-bottom: 8px;
+    }
+
+    .input-section input {
+      width: 100%;
+      max-width: 360px;
+      height: 44px;
+      padding: 0 14px;
+      border: 1px solid #E5E5E2;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      color: #171717;
+      outline: none;
+      text-align: center;
+      transition: border-color 0.15s;
+    }
+
+    .input-section input:focus {
+      border-color: #2563EB;
+    }
+
+    .cert-placeholder {
+      padding: 40px 0;
+    }
+
+    .cert-placeholder p {
+      font-size: 16px;
+      color: #6B6B6B;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .cert {
+        padding: 40px 24px;
+      }
+      .cert-heading { font-size: 24px; }
+      .cert-name { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cert-wrapper">
+    <!-- Input form (shown when no name in URL) -->
+    <div class="cert-placeholder" id="cert-form">
+      <div class="cert" style="text-align: center;">
+        <div class="cert-icon">🎓</div>
+        <h1 style="font-family: 'DM Serif Display', serif; font-size: 28px; margin-bottom: 8px;">Your First PR Certificate</h1>
+        <p style="font-size: 15px; color: #6B6B6B; margin-bottom: 28px;">Enter your name to generate your certificate</p>
+        <div class="input-section">
+          <label for="name-input">Your full name</label>
+          <input type="text" id="name-input" placeholder="e.g. Priya Sharma" autofocus>
+        </div>
+        <button class="cert-share" id="generate-btn" onclick="generateCert()">Generate Certificate</button>
+      </div>
+    </div>
+
+    <!-- Certificate (hidden until generated) -->
+    <div class="cert" id="cert-card" style="display: none;">
+      <div class="cert-badge">First Pull Request</div>
+      <div class="cert-icon">🎉</div>
+      <h1 class="cert-heading">Certificate of Achievement</h1>
+      <p class="cert-sub">This certifies that</p>
+      <div class="cert-name" id="cert-name"></div>
+      <div class="cert-github" id="cert-github"></div>
+      <div class="cert-divider"></div>
+      <p class="cert-detail">
+        Has successfully made their <strong>first Pull Request</strong> on<br>
+        <strong>Our Dev Wall</strong> — a project built by the class.
+      </p>
+      <p class="cert-detail" style="font-size: 13px; color: #999;">
+        "Everyone has to start somewhere."
+      </p>
+      <div class="cert-footer">
+        <button class="cert-share" onclick="shareCert()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Share
+        </button>
+        <a class="cert-home" href="/">← Back to Dev Wall</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cert-toast" id="toast">Link copied to clipboard!</div>
+
+  <script>
+    var params = new URLSearchParams(window.location.search);
+    var nameParam = params.get('name');
+    var githubParam = params.get('github');
+
+    if (nameParam) {
+      document.getElementById('cert-form').style.display = 'none';
+      document.getElementById('cert-card').style.display = 'block';
+      document.getElementById('cert-name').textContent = decodeURIComponent(nameParam);
+      document.getElementById('cert-github').textContent = githubParam ? '@' + decodeURIComponent(githubParam) : '';
+    }
+
+    function generateCert() {
+      var name = document.getElementById('name-input').value.trim();
+      if (!name) return;
+      var url = window.location.pathname + '?name=' + encodeURIComponent(name);
+      window.location.href = url;
+    }
+
+    function shareCert() {
+      var url = window.location.href;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(function () {
+          showToast();
+        });
+      } else {
+        showToast();
+      }
+    }
+
+    function showToast() {
+      var toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(function () { toast.classList.remove('show'); }, 2000);
+    }
+
+    // Enter key on input
+    document.getElementById('name-input').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') generateCert();
+    });
+  </script>
+</body>
+</html>
