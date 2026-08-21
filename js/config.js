@@ -8,13 +8,16 @@
  */
 var CONFIG = {
   // Your GitHub username or organization
-  owner: "YOUR_GITHUB_USERNAME",
+  owner: "ssagar1999",
 
   // The repository name (e.g. "our-dev-wall")
   repo: "our-dev-wall",
 
   // Branch to fetch from
   branch: "main",
+
+  // Total number of students in the class (for the progress bar)
+  totalStudents: 90,
 
   // How many profiles to show (set to 0 for unlimited)
   limit: 0,
