@@ -1,149 +1,190 @@
 # 👋 Our Dev Wall
 
-A class project where every student adds their own profile card to a shared wall.
+**This is a website built by our class.**
 
-This website is built by the students. Every card you see was added by a classmate as their very first pull request on GitHub.
-
----
-
-## What is this?
-
-This is a simple website that shows a wall of student profiles. Each student adds their own card by editing a JSON file and opening a Pull Request.
-
-**Your task:** Add your own card to the wall. That's it.
+Every student adds their own card. Your card goes on this wall after your first Pull Request is merged.
 
 ---
 
-## How to add your card
+## 🎯 Your one task
 
-### Step 1: Fork this repository
+> Add your name, a short bio, and your favourite tech to the website. Then raise a PR. That's it.
 
-1. Click the **Fork** button at the top-right of this page.
-2. This creates your own copy of the project under your GitHub account.
-3. Wait for it to finish. You'll be redirected to your copy.
+**It should take about 5 minutes.**
 
-### Step 2: Find or create your folder
+---
 
-1. In your forked repository, go to the **`students/`** folder.
-2. Look for a folder with **your GitHub username** (for example, `rahul_dev/`).
-3. If your folder doesn't exist, create it:
-   - Click **"Add file" → "Create new file"**
-   - Name it: `students/your-github-username/profile.json`
-   - For example: `students/janedoe/profile.json`
+## 📝 Do this, step by step
 
-### Step 3: Edit your profile.json
+### 1. Click Fork
 
-Open your `profile.json` file and paste this template. Change the values to match your details:
+Look at the top-right of this page. Click the button that says **Fork**.
+
+This makes a copy of the project in your GitHub account.
+
+Wait a few seconds. You will be taken to your copy.
+
+---
+
+### 2. Go to the students folder
+
+Click on the **`students/`** folder.
+
+You will see folders like this:
+
+```
+students/
+  alice_w/
+  bob_dev/
+  carlosmg/
+```
+
+These are example students. Yours will go here too.
+
+---
+
+### 3. Create your folder
+
+Click **"Add file" → "Create new file"**
+
+Type this as the file name (replace `yourusername` with your actual GitHub username):
+
+```
+students/yourusername/profile.json
+```
+
+> ⚠️ Your username must be **exactly** your GitHub username. Not your real name. Not a nickname.
+
+---
+
+### 4. Paste this and change the details
+
+Delete everything in the file. Paste this:
 
 ```json
 {
-  "name": "Your Name",
-  "github": "your-github-username",
-  "about": "A short sentence about yourself.",
+  "name": "Your Full Name",
+  "github": "yourusername",
+  "about": "Write one sentence about yourself.",
   "favoriteTech": "JavaScript",
   "image": ""
 }
 ```
 
-**What each field means:**
+**Now change each line to match you:**
 
-| Field | What to write | Example |
-|-------|--------------|---------|
-| `name` | Your full name | `"Rahul Kumar"` |
-| `github` | Your GitHub username (exactly as it appears) | `"rahul_dev"` |
-| `about` | One sentence about yourself | `"Trying web development for the first time."` |
-| `favoriteTech` | Something you're learning or already know | `"JavaScript"` |
-| `image` | Path to your photo (leave empty for initials) | `"./photo.jpg"` |
+| Line | Change it to | Example |
+|------|-------------|---------|
+| `"name"` | Your real name | `"Priya Sharma"` |
+| `"github"` | Your GitHub username | `"priya_dev"` |
+| `"about"` | One sentence about you | `"Trying to build my first website."` |
+| `"favoriteTech"` | Something you're learning | `"Python"` |
+| `"image"` | Leave as `""` for now | `""` |
 
-**About field examples** — keep it casual:
+**Need ideas for your about line?**
 - "I like making weird websites."
-- "Trying JavaScript for the first time."
-- "I have no idea what I'm doing yet."
-- "Here to build something cool."
-
-### Step 4: Add a photo (optional)
-
-1. Take a photo of yourself (or use any picture).
-2. Name it `photo.jpg`.
-3. Put it in the same folder as your `profile.json`.
-4. In your `profile.json`, set `"image": "./photo.jpg"`.
-5. Keep the image small — under 500KB is ideal.
-
-### Step 5: Commit your changes
-
-1. Go back to your repository.
-2. Click **"Commit changes"**.
-3. Write a message like: `Add my profile`
-4. Click **"Commit changes"** again.
-
-### Step 6: Open a Pull Request
-
-1. Go to the original repository (not your fork).
-2. You should see a yellow banner: **"Compare & pull request"**. Click it.
-   - If you don't see it, go to **Pull requests → New pull request**.
-3. Add a title like: `Add Rahul's profile`
-4. Click **"Create pull request"**.
-
-### Step 7: Done! 🎉
-
-Your teacher will review and merge your Pull Request. Once merged, your card will appear on the Dev Wall.
+- "No idea what I'm doing yet."
+- "Here to learn something new."
+- "Future full-stack developer (hopefully)."
+- "I just want to break stuff and fix it."
 
 ---
 
-## What happens after my PR is merged?
+### 5. Save it
 
-Your profile card will appear on the website automatically. The website reads the `students/` folder and renders every profile it finds.
+Click the green button that says **"Commit changes"**.
 
----
+Type a message like: `Add my profile`
 
-## FAQ
-
-**Q: What if I made a mistake?**
-Edit your `profile.json` file and push another commit. The Pull Request will update automatically.
-
-**Q: What if my folder already exists?**
-Just open the existing `profile.json` file and edit it. Don't create a new folder.
-
-**Q: What if two students have the same name?**
-That's why we use GitHub usernames as folder names. `rahul_dev` and `rahulk23` are different folders.
-
-**Q: What if my Pull Request has conflicts?**
-Your teacher will help you resolve them. Don't worry about it.
-
-**Q: Can I see the website before my PR is merged?**
-Open `index.html` in your browser to preview locally. Or just wait for your teacher to merge it!
+Click **"Commit changes"** again.
 
 ---
 
-## Project structure
+### 6. Open a Pull Request
 
-```
-├── index.html          ← The main web page
-├── css/style.css       ← The styles
-├── js/config.js        ← Repository settings (teacher edits this)
-├── js/app.js           ← Loads and displays student profiles
-├── students/           ← Student folders go here
-│   ├── rahul_dev/
-│   │   ├── profile.json
-│   │   └── photo.jpg
-│   └── janedoe/
-│       └── profile.json
-├── README.md           ← You're reading this
-└── LICENSE
-```
+Now go to the **original repository** (not your fork).
+
+> How? Go to your fork. Look for a message that says something like "This branch is X commits behind [original repo]." Click **"Contribute" → "Open pull request"**.
+
+You will see a page that says **"Open a pull request"**.
+
+Type a title like: `Add Priya's profile`
+
+Click **"Create pull request"**.
 
 ---
 
-## Quick reference
+### 7. Done! 🎉
 
-| What you want to do | Where |
-|---------------------|-------|
-| Add your profile | `students/your-username/profile.json` |
-| Add your photo | `students/your-username/photo.jpg` |
-| Change your bio | Edit the `about` field in your `profile.json` |
-| Change your tech | Edit the `favoriteTech` field |
-| Fix a typo | Edit your `profile.json` and commit |
+Your teacher will merge your PR. Once merged, your card appears on the website.
+
+Tell your teacher: **"I just made my first Pull Request!"**
 
 ---
 
-Built with ❤️ by the class. Happy coding!
+## ❓ Problems? Read this
+
+**"I don't see my folder"**
+→ You have to create it yourself in Step 3.
+
+**"I made a mistake"**
+→ Edit your `profile.json` file. Commit again. Your PR will update automatically.
+
+**"I don't know my GitHub username"**
+→ Click your profile picture (top-right of GitHub). Your username is shown under your name.
+
+**"I don't have a photo"**
+→ That's fine! The website shows your initials instead. You can add a photo later.
+
+**"It says my JSON has an error"**
+→ Check for:
+  - Missing commas between lines
+  - Extra comma at the end
+  - Missing quotes around text
+  - Copy-paste the template exactly and only change the values
+
+---
+
+## 🖼️ Adding a photo (optional, later)
+
+1. Take a photo of yourself
+2. Rename it to `photo.jpg`
+3. Put it in your folder (`students/yourusername/photo.jpg`)
+4. Change this line in your `profile.json`:
+   - Before: `"image": ""`
+   - After: `"image": "./photo.jpg"`
+5. Commit and push
+
+Keep the photo small — under 500KB.
+
+---
+
+## 🔍 Want to check your work?
+
+Before you submit your PR, you can open `index.html` in your browser to see if your card looks right.
+
+Just double-click the `index.html` file in your fork on GitHub, or clone your fork and open it locally.
+
+---
+
+## 📁 What's in this project?
+
+You don't need to understand all of this. Just know:
+
+| File | What it does | Do you touch it? |
+|------|-------------|-----------------|
+| `index.html` | The web page | No |
+| `css/style.css` | The colours and layout | No |
+| `js/app.js` | Loads student cards | No |
+| `students/` | **Your folder goes here** | **Yes!** |
+| `README.md` | This file | No |
+
+---
+
+**You only touch one thing: `students/yourusername/profile.json`**
+
+Everything else is already set up for you.
+
+---
+
+Made with ❤️ by the class.
